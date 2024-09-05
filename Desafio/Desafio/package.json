@@ -1,4 +1,5 @@
 {
+  "homepage":"https://matheus-czeck.github.io/Desafio-Vaga",
   "name": "desafio",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +9,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch data/dados.json"
+    "server": "json-server --watch data/dados.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
