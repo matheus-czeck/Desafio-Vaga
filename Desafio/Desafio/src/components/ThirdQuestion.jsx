@@ -2,16 +2,16 @@ import "./ThirdQuestion.css";
 
 import { useState, useEffect } from "react";
 
-const url = "/enterprise.json";
+const url = "/Desafio-Vaga/enterprise.json";
 
 const ThirdQuestion = () => {
-  const [min, setMin] = useState();
-  const [max, setMax] = useState();
-  const [diasFaturados, setDiasFaturados] = useState();
+  const [min, setMin] = useState(null);
+  const [max, setMax] = useState(null);
+  const [diasFaturados, setDiasFaturados] = useState(null);
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch("/enterprise.json");
+      const res = await fetch(url);
       const data = await res.json();
 
       const min = Math.min(
