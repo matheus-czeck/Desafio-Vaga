@@ -1,4 +1,4 @@
-import React from "react";
+import "./SecondQuestion.css";
 import { useState } from "react";
 
 const SecondQuestion = () => {
@@ -30,11 +30,15 @@ const SecondQuestion = () => {
     if (chosenNumber !== "") {
       if (check !== undefined) {
         return (
-          <h3>Sim!! O número {chosenNumber} está na sequencia de Fibonacci</h3>
+          <span className="green">
+            Sim!! O número {chosenNumber} está na sequencia de Fibonacci
+          </span>
         );
       } else {
         return (
-          <h3>Não! O número {chosenNumber} não na sequencia de Fibonacci</h3>
+          <span className="red">
+            Não! O número {chosenNumber} não na sequencia de Fibonacci
+          </span>
         );
       }
     }
@@ -42,13 +46,14 @@ const SecondQuestion = () => {
   return (
     <div>
       <h2>Questão 2</h2>
-      <label>Seu número está na sequencia de Fibonacci? </label>
-      <input
-        type="number"
-        placeholder="Digite um número"
-        id="input"
-        onChange={handleChose}
-      />
+      <form>
+        <label>Seu número está na sequencia de Fibonacci? </label>
+        <input
+          type="number"
+          placeholder="Digite um número"
+          onChange={handleChose}
+        />
+      </form>
       <p>Resposta: {handleSecondQuestion()} </p>
     </div>
   );

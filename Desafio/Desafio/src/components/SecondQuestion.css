@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+label {
+  margin-left: 0.6rem;
+}
+label {
+  margin-bottom: 0.3rem;
+}
+input {
+  width: 200px;
+  padding: 0.3rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+span {
+  font-size: 23px;
+  font-weight: bold;
+}

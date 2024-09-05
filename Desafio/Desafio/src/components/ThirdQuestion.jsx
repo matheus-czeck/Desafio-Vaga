@@ -1,8 +1,8 @@
-import React from "react";
+import "./ThirdQuestion.css";
 
 import { useState, useEffect } from "react";
 
-const url = "http://localhost:3000/enterprise";
+const url = "/enterprise.json";
 
 const ThirdQuestion = () => {
   const [min, setMin] = useState();
@@ -11,7 +11,7 @@ const ThirdQuestion = () => {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch(url);
+      const res = await fetch("/enterprise.json");
       const data = await res.json();
 
       const min = Math.min(
@@ -20,7 +20,7 @@ const ThirdQuestion = () => {
       setMin(min);
 
       const max = Math.max(...data.map((max) => max.valor));
-      setMax(max)
+      setMax(max);
 
       const businessDay = data
         .map((days) => days.valor)
@@ -47,11 +47,15 @@ const ThirdQuestion = () => {
     <div>
       <h2>Questão 3</h2>
       <p>Respostas: </p>
-      <p>Menor valor de faturamento: {min}</p>
-      <p>Maior valor de faturamento: {max}</p>
+      <p>
+        Menor valor de faturamento: <span>{min}</span>
+      </p>
+      <p>
+        Maior valor de faturamento: <span>{max}</span>
+      </p>
       <p>
         Dias do mês em que o faturamento foi maior que a média mensal:{" "}
-        {diasFaturados} dias
+        <span>{diasFaturados} dias</span>
       </p>
     </div>
   );
